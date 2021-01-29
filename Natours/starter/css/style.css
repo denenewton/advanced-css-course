@@ -11,13 +11,25 @@ Dark green: #28b485
   padding: 0;
   box-sizing: border-box;
 }
+html{
+  font-size: 10px;
+}
+@media (max-width: 776px){
+  html{
+    font-size: 7.7px;
+  }
+}
+@media (max-width: 576px){
+  html{
+    font-size: 5.99px;
+  }
+}
 body{
   font-family: 'Lato', sans-serif;
   font-weight: 400;
-  font-size: 16px;
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  padding: 3rem;
 }
 .header{
   position: relative;
@@ -30,17 +42,18 @@ body{
 }
 .logo-box{
  position: absolute;
- top: 40px;
- left: 40px;
+ top: 4rem;
+ left: 4rem;
 }
 .logo{
- height: 30px;
+  height: 3rem;
 }
 .text-box{
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%,-50%);
+  text-align: center;
 }
 .heading-primary{
   color: #fff;
@@ -50,33 +63,34 @@ body{
 }
 .heading-primary-main{
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
-  animation-delay: 1s;
-  /* animation-iteration-count: 3; */
+  /* animation-delay: 1s;
+  animation-iteration-count: 3; */
 }
 .heading-primary-sub{
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.4px;
+  letter-spacing: 1.74rem;
+  margin-bottom: 6rem;
   animation: moveInRight 1s ease-out;
-  animation-delay: 1s;
+ /*  animation-delay: 1s; */
 }
 @keyframes moveInLeft {
   0%{
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
   /* 60%{
     transform: rotate(180deg);
   } */
   80%{
-    transform: translate(10px);
+    transform: translate(1rem);
   }
   100%{
     opacity: 1;
@@ -87,14 +101,72 @@ body{
 @keyframes moveInRight {
   0%{
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
   80%{
-    transform: translate(-10px);
+    transform: translate(-1rem);
   }
   100%{
     opacity: 1;
     transform: translateX(0);
 
   }
+}
+@keyframes moveInBotton {
+  0%{
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+}
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  transition: all .2s;
+  font-size: 1.4rem;
+}
+.btn-white{
+  background-color: #fff;
+  color: #777;
+}
+.btn:hover{
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+}
+.btn:active{
+  transform: translateY(-0.1rem);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+}
+.btn::after{
+  content:'';
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: -1;
+  transition: all .4s;
+}
+.btn-white::after{
+  background-color: #fff;
+}
+.btn:hover::after{
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+.btn-animation{
+  animation: moveInBotton .7s ease-out .7s;
+  animation-fill-mode: backwards; /* esconde o conteudo antes da animation */
 }
