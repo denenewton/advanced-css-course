@@ -31,5 +31,35 @@ body{
    /*  animation-delay: 1s; */
   }
 }
+.heading-secondary{
+  color:transparent;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  display: inline-block;
+  -webkit-background-clip: text; //deixa o fundo escondido/tranparente...
+  transition: all .2s;
 
+    &:hover{
+      transform: skewY(-2deg) skewX(-15deg);
+      text-shadow: .5rem 1rem 2rem rgba(0,0,0,.2);
+    }
+
+}
+
+.heading-tertiary{
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.paragraph{
+  font-size: 1.6rem;
+
+  &:not(:last-child){
+       margin-bottom: 3rem;
+  }
+}
 

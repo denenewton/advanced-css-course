@@ -46,3 +46,26 @@
     animation-fill-mode: backwards; /* esconde o conteudo antes da animation */
   }
 }
+
+.btn-text{
+  &:link,
+  &:visited{
+    color: $color-primary;
+    font-size: 1.6rem;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    transition: all .2s;
+  }
+  &:hover{
+    background-color: $color-primary;
+    color: $color-grey-light-1;
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem  rgba($color-black,.2);
+  }
+  &:active{
+    transform: translateY(0px);
+    text-shadow: 0 .5rem 1rem  rgba($color-black,.2);
+  }
+}
