@@ -210,7 +210,7 @@
 .overview {
   display: flex;
   align-items: center;
-  border-bottom: 0.1rem solid $grey-light-color-2;
+  border-bottom: $border-bottom;
 
   background-color: #fff;
   height: 6rem;
@@ -249,7 +249,7 @@
 
   &__rating {
     align-self: stretch;
-    padding:  0 2.5rem;
+    padding: 0 2.5rem;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -260,7 +260,7 @@
     &-average {
       font-size: 2.25rem;
       font-weight: 300;
-      margin-bottom: -.3rem;
+      margin-bottom: -0.3rem;
     }
     &-count {
       font-size: 0.8rem;
@@ -293,18 +293,67 @@
     animation: pulsate 1s infinite;
   }
 }
+///////////////////////////////////
+// Paragrafo
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+///////////////////////////////////
+// List
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: $border-bottom;
+  border-bottom: $border-bottom;
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    flex: 0 0 50%;
+  }
+  &__item::before {
+    content: "";
+    display: inline-block;
+    height: 1.1rem;
+    width: 1.1rem;
+    margin-right: 0.7rem;
+    // Older browsers
+    //background-image: url(../img/chevron-thin-right.svg);
+    //background-size: cover;
 
-@keyframes pulsate {
-  0% {
-    transform: scale(1);
-    box-shadow: none;
+    // New browsers - masks
+    background-color: $primary-color;
+    -webkit-mask-image: url(../img/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+    mask-image: url(../img/chevron-thin-right.svg);
+    mask-size: cover;
   }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+}
+///////////////////////////////////
+// RECOMMEND OF USERS.
+.recommend {
+  font-size: 1.3rem;
+  color: $grey-dark-color-3;
+  display: flex;
+  align-items: center;
+
+  &__count {
+   /*  flex: 0 0 55%; */
+   margin-right: auto;
   }
-  100% {
-    transform: scale(1);
-    box-shadow: none;
+  &__friends {
+    display: flex;
+    justify-content: flex-end;
+    /* flex: 1; */
+  }
+  &__photo {
+    box-sizing: content-box;
+    width: 4.5rem;
+    height: 4.5rem;
+    border: .5rem solid #fff;
+    border-radius: 50%;
+    &:not(:last-child){
+      margin-right: -1.9rem;
+    }
   }
 }
