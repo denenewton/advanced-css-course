@@ -52,6 +52,7 @@ body {
   background-color: #fff; }
 
 .detail {
+  font-size: 1.4rem;
   display: flex;
   padding: 4rem;
   border-bottom: 0.1rem solid #f4f2f2;
@@ -67,7 +68,10 @@ body {
 
 .user-reviews {
   flex: 1;
-  background-color: rgba(220, 20, 60, 0.507); }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
 
 .logo {
   height: 3.25rem;
@@ -268,8 +272,13 @@ body {
   background-color: transparent;
   cursor: pointer;
   transition: all 0.2s ease; }
+  .btn-inline span {
+    margin-left: .3rem;
+    transition: margin-left .2s ease; }
   .btn-inline:hover {
     color: #333; }
+    .btn-inline:hover span {
+      margin-left: .8rem; }
   .btn-inline:active {
     transform: translateY(2px); }
   .btn-inline:focus {
@@ -315,12 +324,60 @@ body {
     /* flex: 1; */ }
   .recommend__photo {
     box-sizing: content-box;
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 5.5rem;
+    height: 5.5rem;
     border: .5rem solid #fff;
     border-radius: 50%; }
     .recommend__photo:not(:last-child) {
       margin-right: -1.9rem; }
+
+.review {
+  position: relative;
+  background-color: #fff;
+  display: flex;
+  flex-flow: column wrap;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.07);
+  padding: 3rem 3rem; }
+  .review:not(:last-child) {
+    margin-bottom: 3.5rem; }
+  .review__text {
+    color: #777;
+    z-index: 2; }
+  .review__user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .review__photo {
+    height: 5.5rem;
+    width: 5.5rem;
+    border-radius: 50%;
+    margin: 2rem 1.5rem 2rem 0; }
+  .review__user--name {
+    color: #777;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: .3rem; }
+  .review__user--date {
+    font-size: 1.1rem;
+    color: #999; }
+  .review__rating {
+    color: #BA265D;
+    font-size: 2.2rem;
+    font-weight: 300;
+    margin-left: auto; }
+  .review::before {
+    content: '\201c';
+    position: absolute;
+    top: -8.5rem;
+    left: -1rem;
+    font-size: 20rem;
+    color: #f4f2f2;
+    font-family: sans-serif;
+    z-index: 1; }
+
+.btn-inline {
+  margin: 0 auto; }
 
 @keyframes pulsate {
   0% {
