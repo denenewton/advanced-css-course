@@ -1,37 +1,50 @@
-.container{
- max-width: 120rem;
- margin:  8rem auto;
- background-color: $grey-light-color-2;
- box-shadow: $shadow-dark;
- min-height: 50rem;
-}
-.header{
- display: flex;
- justify-content: space-between;
+.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: $grey-light-color-2;
+  box-shadow: $shadow-dark;
+  min-height: 50rem;
 
- font-size: 1.4rem;
- font-family: inherit;
- align-items: center;
- height: 7rem;
- background-color: #fff;
- border-bottom: $border-bottom;
+  @media screen and (max-width:$bp-largest) {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+  }
 }
-.content{
- display: flex;
+.header {
+  display: flex;
+  justify-content: space-between;
 
+  font-size: 1.4rem;
+  font-family: inherit;
+  align-items: center;
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: $border-bottom;
+  @media only screen and (max-width: $bp-smallest) {
+    flex-wrap: wrap;
+    align-content: space-around;
+    height: 11rem;
 }
-.sidebar{
+}
+.content {
+  display: flex;
+  @media screen and (max-width:$bp-medium) {
+    flex-direction: column;
+  }
+}
+.sidebar {
   flex: 0 0 18%;
   background-color: $grey-dark-color-1;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
 }
-.hotel-view{
+.hotel-view {
   flex: 1;
   background-color: #fff;
-
 }
 
 ///////////////////////////////////
@@ -40,18 +53,35 @@
 .detail {
   font-size: 1.4rem;
   display: flex;
+  flex-flow: row nowrap;
   padding: 4rem;
   border-bottom: $border-bottom;
   background-color: $grey-light-color-1;
+  @media screen and (max-width:$bp-medium) {
+    padding: 3rem;
+  }
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+}
 }
 .description {
   font-size: 1.4rem;
   background-color: #fff;
-  box-shadow: 0 2rem 5rem rgba(0,0,0,0.07);
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.07);
   padding: 3rem;
 
   flex: 0 0 55%;
   margin-right: 4rem;
+
+  @media screen and (max-width:$bp-medium) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+  @media only screen and (max-width: $bp-small) {
+    margin-right: 0;
+    margin-bottom: 3rem;
+}
+  
 }
 .user-reviews {
   flex: 1;
@@ -59,5 +89,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
 
+
+}
